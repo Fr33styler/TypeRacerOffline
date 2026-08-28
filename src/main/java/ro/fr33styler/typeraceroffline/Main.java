@@ -103,6 +103,9 @@ public class Main {
 
             wpmField.setText("WPM: 0");
             session.setTypedWords(0);
+            session.setLastTypedWords(0);
+            session.setSumOfDeltaTypedWords(0);
+            session.setLengthOfDeltaTypedWords(0);
             typedWordsField.setText("Typed: 0");
             session.setTypedLetters(0);
             try {
