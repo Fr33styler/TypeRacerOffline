@@ -161,7 +161,7 @@ public class Main {
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 
         executorService.scheduleAtFixedRate(() -> {
-            if (session.getWords().size() < session.getTypedWords() && session.getWords().size() <= session.getIndex()) return;
+            if (session.getWords().size() < session.getTypedWords() || session.getWords().size() == session.getIndex()) return;
 
             int typedWords = session.getTypedWords();
 
