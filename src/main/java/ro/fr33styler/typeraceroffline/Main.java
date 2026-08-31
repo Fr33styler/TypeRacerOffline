@@ -169,11 +169,11 @@ public class Main {
             session.setLengthOfDeltaTypedWords(session.getLengthOfDeltaTypedWords() + 1);
 
             if (session.getLastTypedWords() > 0) {
-                wpmField.setText("WPM: " + Math.round(session.getSumOfDeltaTypedWords() / session.getLengthOfDeltaTypedWords() * 60));
+                wpmField.setText("WPM: " + Math.round(session.getSumOfDeltaTypedWords() / session.getLengthOfDeltaTypedWords() * 600));
             }
 
             session.setLastTypedWords(typedWords);
-        }, 0, 1, TimeUnit.SECONDS);
+        }, 0, 100, TimeUnit.MILLISECONDS);
 
         topPanel.add(wpmField);
         topPanel.add(typedWordsField);
