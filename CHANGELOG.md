@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.2.1...v1.2.2) (2026-10-06)
+
+
+### Bug Fixes
+
+* Enabled system look and feel ([e65471e](https://github.com/Fr33styler/TypeRacerOffline/commit/e65471e8668738d4342bc822f479de9fee46f78a))
+
 ## [1.2.1](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.2.0...v1.2.1) (2026-10-06)
 
 
