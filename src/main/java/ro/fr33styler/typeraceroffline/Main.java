@@ -146,14 +146,23 @@ public class Main {
                     typedWordsField.setText("Typed: " + session.getTypedWords());
                     session.setTypedLetters(session.getTypedLetters() + typeField.getText().length() + 1);
 
-                    try {
-                        highlighter.removeHighlight(session.getHighlight());
-                        session.setHighlight(highlighter.addHighlight(session.getTypedLetters(),
-                                session.getTypedLetters() + session.getWordAt(session.getIndex()).length(), highlightPainter));
-                    } catch (BadLocationException exception) {
-                        System.out.println("Out of bounds!");
-                    }
                     typeField.setText("");
+                    updateHighlighter(highlightPainter);
+                } else if (!session.getWordAt(session.getIndex()).startsWith(typeField.getText())) {
+                    updateHighlighter(highlightPainterFail);
+                } else {
+                    updateHighlighter(highlightPainter);
+                }
+            }
+
+            private void updateHighlighter(DefaultHighlighter.DefaultHighlightPainter painter) {
+                try {
+                    highlighter.removeHighlight(session.getHighlight());
+                    int wordLength = session.getWords().get(session.getIndex()).length();
+                    int length = typeField.getText().isEmpty() ? wordLength : Math.min(typeField.getText().length(), wordLength);
+                    session.setHighlight(highlighter.addHighlight(session.getTypedLetters(), session.getTypedLetters() + length, painter));
+                } catch (BadLocationException exception) {
+                    System.out.println("Out of bounds!");
                 }
             }
         });
