@@ -89,6 +89,7 @@ public class Main {
         centerPanel.add(bodyScrollablePane);
 
         DefaultHighlighter.DefaultHighlightPainter highlightPainter = new DefaultHighlighter.DefaultHighlightPainter(Color.GRAY);
+        DefaultHighlighter.DefaultHighlightPainter highlightPainterFail = new DefaultHighlighter.DefaultHighlightPainter(new Color(146, 31, 31));
 
         button.addActionListener(action -> {
             Random random = ThreadLocalRandom.current();
