@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.2.0...v1.2.1) (2026-10-06)
+
+
+### Bug Fixes
+
+* Fixed an out-of-bounds exception in the highlighter ([0c52324](https://github.com/Fr33styler/TypeRacerOffline/commit/0c5232496e27b33b98dea22e49f115d27b80c664))
+
 ## [1.2.0](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.1.0...v1.2.0) (2026-10-06)
 
 
