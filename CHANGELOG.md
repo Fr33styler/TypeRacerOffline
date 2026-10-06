@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.0.0...v1.1.0) (2026-10-06)
+
+
+### Features
+
+* Added mistake highlight and also now the highlight follows the current typed length instead of highlighting the whole word ([cceb0f4](https://github.com/Fr33styler/TypeRacerOffline/commit/cceb0f4fd79208e05ae4e36734390536d46d6ef6))
+* Added mistake highlight and also now the highlight follows the current typed length instead of highlighting the whole word ([b4b24ec](https://github.com/Fr33styler/TypeRacerOffline/commit/b4b24ec7c2e42dc3eff6d27dd03d92d132731684))
+
 ## 1.0.0 (2026-09-26)
 
 
