@@ -43,7 +43,7 @@ public class Main {
 
         System.setProperty("sun.java2d.noddraw", "true");
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {}
 
         JFrame frame = new JFrame("TypeRacerOffline");
@@ -159,6 +159,8 @@ public class Main {
             private void updateHighlighter(DefaultHighlighter.DefaultHighlightPainter painter) {
                 try {
                     highlighter.removeHighlight(session.getHighlight());
+                    if (session.getWords().size() <= session.getIndex()) return;
+
                     int wordLength = session.getWords().get(session.getIndex()).length();
                     int length = typeField.getText().isEmpty() ? wordLength : Math.min(typeField.getText().length(), wordLength);
                     session.setHighlight(highlighter.addHighlight(session.getTypedLetters(), session.getTypedLetters() + length, painter));
