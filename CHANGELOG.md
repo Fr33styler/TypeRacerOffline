@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.1.0...v1.2.0) (2026-10-06)
+
+
+### Features
+
+* Updated text so that now it comes from some of my favorite authors ([7430af2](https://github.com/Fr33styler/TypeRacerOffline/commit/7430af272d09969a92a9cb61bd82560e56cbd8c9))
+
 ## [1.1.0](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.0.0...v1.1.0) (2026-10-06)
 
 
