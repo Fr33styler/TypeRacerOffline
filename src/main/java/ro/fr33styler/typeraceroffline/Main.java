@@ -43,7 +43,7 @@ public class Main {
 
         System.setProperty("sun.java2d.noddraw", "true");
         try {
-            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ignored) {}
 
         JFrame frame = new JFrame("TypeRacerOffline");
