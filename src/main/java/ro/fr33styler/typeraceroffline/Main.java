@@ -146,25 +146,27 @@ public class Main {
 
             @Override
             public void keyReleased(KeyEvent event) {
-                if (!Character.isLetterOrDigit(event.getKeyChar()) && !isPunctuation(event.getKeyChar())) return;
-
-                session.setTotalTypedLetters(session.getTotalTypedLetters() + 1);
-                if (typeField.getText().equals(session.getWordAt(session.getIndex()))) {
-
-                    session.setIndex(session.getIndex() + 1);
-                    session.setHighlightStart(session.getHighlightStart() + typeField.getText().length() + 1);
-
-                    session.setTypedWords(session.getTypedWords() + 1);
-                    typedWordsField.setText("Typed: " + session.getTypedWords());
-                    session.setTypedLetters(session.getTypedLetters() + typeField.getText().length());
-                    accuracyField.setText("Accuracy: " + (int) ((session.getTypedLetters() / (double) session.getTotalTypedLetters()) * 100) + "%");
-
-                    typeField.setText("");
+                if (session.getWordAt(session.getIndex()).startsWith(typeField.getText())) {
                     updateHighlighter(highlightPainter);
-                } else if (!session.getWordAt(session.getIndex()).startsWith(typeField.getText())) {
-                    updateHighlighter(highlightPainterFail);
                 } else {
-                    updateHighlighter(highlightPainter);
+                    updateHighlighter(highlightPainterFail);
+                }
+
+                if (Character.isLetterOrDigit(event.getKeyChar()) && !isPunctuation(event.getKeyChar())) {
+                    session.setTotalTypedLetters(session.getTotalTypedLetters() + 1);
+                    if (typeField.getText().equals(session.getWordAt(session.getIndex()))) {
+
+                        session.setIndex(session.getIndex() + 1);
+                        session.setHighlightStart(session.getHighlightStart() + typeField.getText().length() + 1);
+
+                        session.setTypedWords(session.getTypedWords() + 1);
+                        typedWordsField.setText("Typed: " + session.getTypedWords());
+                        session.setTypedLetters(session.getTypedLetters() + typeField.getText().length());
+                        accuracyField.setText("Accuracy: " + (int) ((session.getTypedLetters() / (double) session.getTotalTypedLetters()) * 100) + "%");
+
+                        typeField.setText("");
+                        updateHighlighter(highlightPainter);
+                    }
                 }
             }
 
