@@ -60,6 +60,9 @@ public class Main {
         JTextField wpmField = new JTextField("WPM: 0", 10);
         wpmField.setEditable(false);
 
+        JTextField accuracyField = new JTextField("Accuracy: 100%", 10);
+        accuracyField.setEditable(false);
+
         topPanel.add(new JLabel("Type Here:"));
 
         JTextField typeField = new JTextField("", 20);
@@ -103,12 +106,15 @@ public class Main {
             session.setIndex(0);
 
             wpmField.setText("WPM: 0");
+            accuracyField.setText("Accuracy: 100%");
             session.setTypedWords(0);
+            session.setTypedLetters(0);
+            session.setTotalTypedLetters(0);
             session.setLastTypedWords(0);
             session.setSumOfDeltaTypedWords(0);
             session.setLengthOfDeltaTypedWords(0);
             typedWordsField.setText("Typed: 0");
-            session.setTypedLetters(0);
+            session.setHighlightStart(0);
             try {
                 session.setHighlight(highlighter.addHighlight(0, session.getWords().get(0).length(), highlightPainter));
             } catch (BadLocationException exception) {
@@ -140,12 +146,18 @@ public class Main {
 
             @Override
             public void keyReleased(KeyEvent event) {
+                if (!Character.isLetterOrDigit(event.getKeyChar()) && !isPunctuation(event.getKeyChar())) return;
+
+                session.setTotalTypedLetters(session.getTotalTypedLetters() + 1);
                 if (typeField.getText().equals(session.getWordAt(session.getIndex()))) {
 
                     session.setIndex(session.getIndex() + 1);
+                    session.setHighlightStart(session.getHighlightStart() + typeField.getText().length() + 1);
+
                     session.setTypedWords(session.getTypedWords() + 1);
                     typedWordsField.setText("Typed: " + session.getTypedWords());
-                    session.setTypedLetters(session.getTypedLetters() + typeField.getText().length() + 1);
+                    session.setTypedLetters(session.getTypedLetters() + typeField.getText().length());
+                    accuracyField.setText("Accuracy: " + (int) ((session.getTypedLetters() / (double) session.getTotalTypedLetters()) * 100) + "%");
 
                     typeField.setText("");
                     updateHighlighter(highlightPainter);
@@ -156,6 +168,11 @@ public class Main {
                 }
             }
 
+            private boolean isPunctuation(char character) {
+                return character >= 33 && character <= 47 || character >= 58 && character <= 64 ||
+                        character >= 91 && character <= 95 || character >= 123 && character <= 125;
+            }
+
             private void updateHighlighter(DefaultHighlighter.DefaultHighlightPainter painter) {
                 try {
                     highlighter.removeHighlight(session.getHighlight());
@@ -163,7 +180,7 @@ public class Main {
 
                     int wordLength = session.getWords().get(session.getIndex()).length();
                     int length = typeField.getText().isEmpty() ? wordLength : Math.min(typeField.getText().length(), wordLength);
-                    session.setHighlight(highlighter.addHighlight(session.getTypedLetters(), session.getTypedLetters() + length, painter));
+                    session.setHighlight(highlighter.addHighlight(session.getHighlightStart(), session.getHighlightStart() + length, painter));
                 } catch (BadLocationException exception) {
                     System.out.println("Out of bounds!");
                 }
@@ -189,6 +206,7 @@ public class Main {
 
         topPanel.add(wpmField);
         topPanel.add(typedWordsField);
+        topPanel.add(accuracyField);
 
         frame.add(topPanel, BorderLayout.PAGE_START);
         frame.add(centerPanel, BorderLayout.CENTER);

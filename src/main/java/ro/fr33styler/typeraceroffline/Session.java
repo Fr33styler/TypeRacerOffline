@@ -7,11 +7,13 @@ public class Session {
 
     private int index;
     private int typedWords;
+    private int typedLetters;
+    private int totalTypedLetters;
     private int lastTypedWords;
     private double sumOfDeltaTypedWords;
     private int lengthOfDeltaTypedWords;
 
-    private int typedLetters;
+    private int highlightStart;
     private Object highlight;
 
     private final List<String> words = new ArrayList<>();
@@ -30,6 +32,22 @@ public class Session {
 
     public void setTypedWords(int typedWords) {
         this.typedWords = typedWords;
+    }
+
+    public int getTypedLetters() {
+        return typedLetters;
+    }
+
+    public void setTypedLetters(int typedLetters) {
+        this.typedLetters = typedLetters;
+    }
+
+    public int getTotalTypedLetters() {
+        return totalTypedLetters;
+    }
+
+    public void setTotalTypedLetters(int totalTypedLetters) {
+        this.totalTypedLetters = totalTypedLetters;
     }
 
     public int getLastTypedWords() {
@@ -56,12 +74,12 @@ public class Session {
         this.lengthOfDeltaTypedWords = lengthOfDeltaTypedWords;
     }
 
-    public int getTypedLetters() {
-        return typedLetters;
+    public int getHighlightStart() {
+        return highlightStart;
     }
 
-    public void setTypedLetters(int typedLetters) {
-        this.typedLetters = typedLetters;
+    public void setHighlightStart(int highlightStart) {
+        this.highlightStart = highlightStart;
     }
 
     public Object getHighlight() {
