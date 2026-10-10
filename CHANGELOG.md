@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.3.0...v1.3.1) (2026-10-10)
+
+
+### Bug Fixes
+
+* Now the highlight will show correctly even if you made a mistake at first character. ([4322b79](https://github.com/Fr33styler/TypeRacerOffline/commit/4322b7944c809bdc8c73c6f8cb04cb5b74f164e8))
+
 ## [1.3.0](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.2.2...v1.3.0) (2026-10-10)
 
 
