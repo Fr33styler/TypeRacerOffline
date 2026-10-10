@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.2.2...v1.3.0) (2026-10-10)
+
+
+### Features
+
+* Added accuracy field ([4dc9c48](https://github.com/Fr33styler/TypeRacerOffline/commit/4dc9c48fa6dbcc89a7924d14cd40f5726ba2794f))
+
 ## [1.2.2](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.2.1...v1.2.2) (2026-10-06)
 
 
