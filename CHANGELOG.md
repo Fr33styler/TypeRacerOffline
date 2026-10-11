@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.3.1...v1.3.2) (2026-10-11)
+
+
+### Bug Fixes
+
+* Fixed a bug created during the last update ([5e3ea31](https://github.com/Fr33styler/TypeRacerOffline/commit/5e3ea31cbb9e61dcb82ae177adc386a424c0083d))
+
 ## [1.3.1](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.3.0...v1.3.1) (2026-10-10)
 
 
