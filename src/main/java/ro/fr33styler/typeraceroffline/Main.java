@@ -152,7 +152,7 @@ public class Main {
                     updateHighlighter(highlightPainterFail);
                 }
 
-                if (Character.isLetterOrDigit(event.getKeyChar()) && !isPunctuation(event.getKeyChar())) {
+                if (Character.isLetterOrDigit(event.getKeyChar()) || isPunctuation(event.getKeyChar())) {
                     session.setTotalTypedLetters(session.getTotalTypedLetters() + 1);
                     if (typeField.getText().equals(session.getWordAt(session.getIndex()))) {
 
