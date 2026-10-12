@@ -214,6 +214,8 @@ public class Main {
         frame.add(centerPanel, BorderLayout.CENTER);
 
         frame.pack();
+        frame.setLocationRelativeTo(centerPanel);
+        frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
 
