@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.3.2...v1.3.3) (2026-10-12)
+
+
+### Bug Fixes
+
+* Now the position of the gui will appear at the center of the screen ([1108f2e](https://github.com/Fr33styler/TypeRacerOffline/commit/1108f2e7fd17c129601d950a7fb299e4f827883c))
+
 ## [1.3.2](https://github.com/Fr33styler/TypeRacerOffline/compare/v1.3.1...v1.3.2) (2026-10-11)
 
 
